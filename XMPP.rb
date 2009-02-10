@@ -371,7 +371,7 @@ module XMPPBot
     private
 
     def start_service
-      @start_com.call
+      @start_com.call if @start_com
     end
 
     def stop_service
