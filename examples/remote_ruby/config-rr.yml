@@ -1,0 +1,13 @@
+---
+from:
+  jid: user@gmail.com
+  password: password
+  host: talk.google.com
+vcard:
+  nickname: XMPP Bot
+  fn: XMPP Bot
+  url: http://www.xaop.com
+  #photo: avatar-red.png
+server:
+  host: localhost
+  port: 7777

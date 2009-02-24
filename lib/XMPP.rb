@@ -94,6 +94,7 @@ module XMPPBot
     #         :password => password,
     #         :host => host,
     #         :auto_start => true,
+    #         :start_delay => seconds,
     #         :start_command => "god -c monitor.rb"}
     #
     #handler: MessageHandler, usually not provided on creation
@@ -122,7 +123,10 @@ module XMPPBot
 
       #keep_alive
 
-      start_service if config[:auto_start]
+      Thread.new do
+        sleep(config[:start_delay]) if config[:start_delay]
+        start_service if config[:auto_start]
+      end
 
       at_exit do
         begin
