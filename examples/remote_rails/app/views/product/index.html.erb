@@ -1,0 +1,19 @@
+
+<table>
+<% @products.each do |p| %>
+  <tr><td><%=p.name%></td><td><%= button_to "Remove", {:action => 'delete', :id => p.id} %></td></tr>
+<% end %>
+</table>
+<br/>
+<br/>
+<label>Create a product:</label>
+<form action="/product/create" method="post">
+  <div style="margin:0;padding:0">
+    <input name="authenticity_token" type="hidden" value="c25767bf3167aac5bb2a3c8b1b465ff4512b041a" />
+  </div>
+  <p>
+    <label for="prod_name">Name</label><br />
+    <input id="prod_name" name="prod[name]" size="30" type="text" />
+  </p>
+  <input name="commit" type="submit" value="Create" />
+</form>
